@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Andy ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  background: black;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.text {
+  position: absolute;
+  color: red;
+  font-weight: bold;
+  white-space: nowrap;
+  animation: float 8s linear infinite;
+  text-shadow: 0 0 15px red;
+}
+
+.heart {
+  position: absolute;
+  color: red;
+  font-size: 24px;
+  animation: float 10s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<script>
+const phrases = [
+"I love love you",
+"I miss you",
+"Feliz San Valentín rarito",
+"Andy",
+"I love love you Andy",
+"You are special to me",
+"Always on my mind",
+"Still thinking about you"
+];
+
+function createText() {
+  const text = document.createElement("div");
+  text.className = "text";
+  text.innerHTML = phrases[Math.floor(Math.random() * phrases.length)];
+  text.style.left = Math.random() * 100 + "vw";
+  text.style.fontSize = (Math.random() * 25 + 18) + "px";
+  text.style.animationDuration = (Math.random() * 5 + 5) + "s";
+  document.body.appendChild(text);
+
+  setTimeout(() => {
+    text.remove();
+  }, 8000);
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+  heart.style.animationDuration = (Math.random() * 5 + 7) + "s";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 10000);
+}
+
+setInterval(createText, 400);
+setInterval(createHeart, 700);
+</script>
+
+</body>
+</html>
