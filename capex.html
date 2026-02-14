@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Andy ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  background: linear-gradient(black, #300000);
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.text {
+  position: absolute;
+  color: red;
+  font-weight: bold;
+  animation: float 7s linear infinite;
+  white-space: nowrap;
+  text-shadow: 0 0 10px red;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
+
+.centerMessage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 20px red;
+}
+</style>
+</head>
+
+<body>
+
+<div class="centerMessage">
+  Happy Valentine's Day, rarito ❤️<br>
+  Andy... I miss you.
+</div>
+
+<iframe width="0" height="0" 
+src="AQUI_PEGA_EL_LINK_EMBED_DE_YOUTUBE" 
+frameborder="0" 
+allow="autoplay">
+</iframe>
+
+<script>
+const phrases = [
+"I love love you ❤️",
+"I miss you 🖤",
+"Feliz San Valentín rarito ❤️",
+"Andy ❤️",
+"You are my favorite person",
+"I love love you Andy"
+];
+
+function createText() {
+  const text = document.createElement("div");
+  text.className = "text";
+  text.innerHTML = phrases[Math.floor(Math.random() * phrases.length)];
+  text.style.left = Math.random() * 100 + "vw";
+  text.style.fontSize = (Math.random() * 25 + 18) + "px";
+  document.body.appendChild(text);
+
+  setTimeout(() => {
+    text.remove();
+  }, 7000);
+}
+
+setInterval(createText, 300);
+</script>
+
+</body>
+</html>
